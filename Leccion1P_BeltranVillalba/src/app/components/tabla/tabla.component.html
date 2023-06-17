@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-danger">
+    <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/datos">Datos</a>
+            </ul>
+      </div>
+    </div>
+  </nav>
+
+<form [formGroup]="form" (ngSubmit)="agregarPersona()">
+    <div class="container mt-5">
+      <div class="row">
+        <div class="input-group">
+            <div class="form-group">
+                <label for="cedula">Cedula:</label>
+                <input type="text" formControlName="cedula" class="form-control form-control-lf" id="cedula" placeholder="Ingrese cedula">
+                <div class="row">
+                  <div class="col">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" formControlName="nombre" class="form-control form-control-lf" id="nombre" placeholder="Ingrese nombre">
+                    </div>           
+                  <div class="col">
+                  <label for="apellido">Apellido:</label>
+                  <input type="text" formControlName="apellido" class="form-control form-control-lf" id="apellido" placeholder="Ingrese apellido">
+                  </div>
+                  
+                    <div class="col">
+                      <label for="fecha">Fecha</label>
+                      <input type="date" formControlName="fecha" class="form-control form-control-lf" id="fecha">
+                    </div>
+                </div>
+               <br>
+  
+                <button type="submit" class="btn btn-primary">Agregar<i class="bi bi-person-add"></i></button>
+  
+            </div>
+        </div>
+    </div>
+    </div> 
+  
+  </form>
+          <div class="col-lg-6 offset-lg-3 mt-3">
+              
+              <table class="table bg-light ">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Cédula</th>
+                      <th>Nombre</th>
+                      <th>Apellido</th>
+                      <th>Fecha de nacimiento</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let Persona of listPersona let i=index">
+                      
+                      <td>{{ Persona.Id }}</td>
+                      <td>{{ Persona.cedula }}</td>
+                      <td>{{ Persona.nombre }}</td>
+                      <td>{{ Persona.apellido }}</td>
+                      <td>{{ Persona.fecha }}</td>                       
+                   
+                    </tr>                  
+                  </tbody>
+               </table>          
+              </div>               
